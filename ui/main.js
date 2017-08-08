@@ -10,6 +10,6 @@ function moveRight()
 }
 imgchv.onclick=function()
 {
-    var interval=setInterval(moveRight,100);
+    var interval=setInterval(moveRight,10);
     imgchv.style.marginLeft='100px'
 }
