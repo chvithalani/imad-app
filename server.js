@@ -25,8 +25,15 @@ app.get('/counter', function (req, res) {
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
-
-
+var names=[];
+app.get('/submit-name/:name', function (req, res) {
+    //Get name from the request
+    var name=req.params.name;
+    names.push(name);
+    //JSON Java Script Object Notation
+    res.send(JSON.stringify(names));
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
